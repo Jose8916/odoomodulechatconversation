@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="modal_conversacion_form_view_wiz" model="ir.ui.view">
+            <field name="name">modal.conversacion.form.wiz</field>
+            <field name="model">modal.conversacion.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <group>
+                        </group>
+                        <footer>
+                            <button string="Cerrar" special="cancel" class="btn btn-secondary" />
+                        </footer>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="modal_conversacion_action" model="ir.actions.act_window">
+            <field name="name">Conversacion</field>
+            <field name="res_model">modal.conversacion.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>

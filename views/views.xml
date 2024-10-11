@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <record id="view_conversaciones_tree" model="ir.ui.view">
+    <field name="name">modulo.conversaciones.tree</field>
+    <field name="model">modulo.conversaciones</field>
+    <field name="priority" eval="16"/>
+    <field name="arch" type="xml">
+      <tree string="Idea list">
+        <button name="abrir_modal" string="HSM" class="btn-primary" type="object"/> 
+        <field name="numeroticket"/>
+        <field name="estadoconversacion"/>
+        <field name="firstusergroup"/>
+        <field name="ticketgroup"/>
+        <field name="attentiongroup"/>
+        <field name="asesorinicial"/>
+        <field name="asesorfinal"/>
+        <field name="supervisor"/>
+        <field name="empresa"/>
+        <field name="fecha"/>
+        <field name="fechainicio"/>
+        <field name="horainicio"/>
+        <field name="fechahandoff"/>
+        <field name="fechafin"/>
+        <field name="horafin"/>
+        <field name="fechaprimeraconversacion"/>
+        <field name="fechaultimaconversacion"/>
+        <field name="tiempoprimerarespuesta"/>
+      </tree>
+    </field>
+  </record>
+
+  <record model="ir.ui.view" id="view_formulario">
+    <field name="name">view.name.form</field>
+    <field name="model">modulo.conversaciones</field>
+    <field name="priority" eval="16"/>
+    <field name="arch" type="xml">
+      <form string="Form">
+        <sheet>
+          <group>
+            <group>
+              <field name="numeroticket"/>
+              <field name="estadoconversacion"/>
+              <field name="firstusergroup"/>
+              <field name="ticketgroup"/>
+              <field name="attentiongroup"/>
+              <field name="asesorinicial"/>
+              <field name="asesorfinal"/>
+              <field name="supervisor"/>
+              <field name="empresa"/>
+              <field name="fecha"/>
+              <field name="fechainicio"/>
+              <field name="horainicio"/>
+              <field name="fechahandoff"/>
+              <field name="fechafin"/>
+              <field name="horafin"/>
+              <field name="fechaprimeraconversacion"/>
+              <field name="fechaultimaconversacion"/>
+              <field name="tiempoprimerarespuesta"/>
+            </group>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record model="ir.actions.act_window" id="action_list_ideas">
+    <field name="name">ZyxmeConversaciones</field>
+    <field name="res_model">modulo.conversaciones</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <menuitem id="menu_ideas_parent" name="ZyxmeConversaciones" sequence="10" />
+
+  <menuitem id="menu_ideas" sequence="5" action="action_list_ideas" parent="menu_ideas_parent" />
+
+</odoo>
+  
